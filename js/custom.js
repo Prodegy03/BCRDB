@@ -1,7 +1,4 @@
-/* Author:WebThemez
- * Author URI:http://webthemez.com
- * License: Creative Commons Attribution 3.0 License (https://creativecommons.org/licenses/by/3.0/)
- */
+
 
 (function($){
 	$(document).ready(function(){
@@ -110,10 +107,6 @@
 		}
 
 	}); // End document ready
-})(this.jQuery);
-const button = document.querySelector("donate_button")
-button.addEventListener('click', (e)=>{
-	Window.location.href 'https://gofund.me/678607dc';
 })
 
 
