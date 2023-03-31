@@ -890,3 +890,6 @@ border-radius: 50%;
 	-webkit-transform: scale(1);
 	transform: scale(1);
 }
+#donate-button{
+	margin: auto;
+}
