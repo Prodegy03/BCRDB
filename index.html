@@ -269,7 +269,7 @@
 							<ul class="nav nav-pills">
 								<li class="active"><a href="#" data-filter="*">All</a></li>
 								<li><a href="#" data-filter=".web-design">New Releases</a></li>
-								<li><a href="#" data-filter=".app-development">What Everyone is reading</a></li>
+								<li><a href="#" data-filter=".app-development">Popular</a></li>
 								<li><a href="#" data-filter=".mobile-apps">Coming Soon</a></li>
 							</ul>
 						</div>
@@ -280,13 +280,13 @@
 							<div class="col-sm-6 col-md-3 isotope-item web-design">
 								<div class="image-box">
 									<div class="overlay-container">
-										<img src="images/portfolio-1.jpg" alt="">
+										<img src="images/The_Name_of_the_Wind.jpg" alt="">
 										<a class="overlay" data-toggle="modal" data-target="#project-1">
 											<i class="fa fa-search-plus"></i>
 											 
 										</a>
 									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-1">Project Title</a>
+									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-1">The Name of the Wind</a>
 								</div>
 								<!-- Modal -->
 								<div class="modal fade" id="project-1" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
@@ -294,16 +294,24 @@
 										<div class="modal-content">
 											<div class="modal-header">
 												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-1-label">Project Title</h4>
+												<h4 class="modal-title" id="project-1-label">The Name of the Wind</h4>
 											</div>
 											<div class="modal-body">
 												
 												<div class="row">												 
 													<div class="col-md-12">
-														<img src="images/portfolio-1.jpg" alt="">
+														<img src="images/The_Name_of_the_Wind.jpg" alt="">
 														<br/>
-														<h3>Project Description</h3>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde. Quae sed, incidunt laudantium nesciunt, optio corporis quod earum pariatur omnis illo saepe numquam suscipit, nemo placeat dignissimos eius mollitia et quas officia doloremque ipsum labore rem deserunt.</p>
+														<h3>Summery</h3>
+														<p>DAY ONE: THE NAME OF THE WIND
+ 
+															My name is Kvothe.
+															 
+															I have stolen princesses back from sleeping barrow kings. I burned down the town of Trebon. I have spent the night with Felurian and left with both my sanity and my life. I was expelled from the University at a younger age than most people are allowed in. I tread paths by moonlight that others fear to speak of during day. I have talked to Gods, loved women, and written songs that make the minstrels weep.
+															 
+															You may have heard of me.
+															 
+															So begins a tale unequaled in fantasy literature—the story of a hero told in his own voice. It is a tale of sorrow, a tale of survival, a tale of one man’s search for meaning in his universe, and how that search, and the indomitable will that drove it, gave birth to a legend.  </p>
 													</div>
 												</div>
 											</div>
@@ -319,13 +327,13 @@
 							<div class="col-sm-6 col-md-3 isotope-item app-development">
 								<div class="image-box">
 									<div class="overlay-container">
-										<img src="images/portfolio-2.jpg" alt="">
+										<img src="images/slow_reguard.jpg" alt="">
 										<a class="overlay" data-toggle="modal" data-target="#project-2">
 											<i class="fa fa-search-plus"></i>
 											 
 										</a>
 									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-2">Project Title</a>
+									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-2">The Slow Regard of Silent Things</a>
 								</div>
 								<!-- Modal -->
 								<div class="modal fade" id="project-2" tabindex="-1" role="dialog" aria-labelledby="project-2-label" aria-hidden="true">
@@ -333,16 +341,18 @@
 										<div class="modal-content">
 											<div class="modal-header">
 												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-2-label">Project Title</h4>
+												<h4 class="modal-title" id="project-2-label">The Slow Regard of Silent Things</h4>
 											</div>
 											<div class="modal-body">
 												
 												<div class="row">												 
 													<div class="col-md-12">
-														<img src="images/portfolio-2.jpg" alt="">
+														<img src="images/slow_reguard.jpg" alt="">
 														<br/>
-														<h3>Project Description</h3>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde. Quae sed, incidunt laudantium nesciunt, optio corporis quod earum pariatur omnis illo saepe numquam suscipit, nemo placeat dignissimos eius mollitia et quas officia doloremque ipsum labore rem deserunt.</p>
+														<h3>Summery</h3>
+														<p>Deep below the University, there is a dark place. Few people know of it: a broken web of ancient passageways and abandoned rooms. A young woman lives there, tucked among the sprawling tunnels of the Underthing, snug in the heart of this forgotten place.
+ 
+															Her name is Auri, and she is full of mysteries.</p>
 													</div>
 												</div>
 											</div>
@@ -843,7 +853,25 @@
          </div>      
     </section>
 		
-
+	<form name="sentMessage" id="contactForm"  novalidate> 
+		<h1> Request a Book</h1>
+		<div class="control-group">
+		<div class="controls">
+		<input type="text" class="form-control" 
+		placeholder="Book Title" id="name" required
+		data-validation-required-message="Please enter the title of your book" />
+		<p class="help-block"></p>
+		</div>
+		</div> 	
+		<div class="control-group">
+		<div class="controls">
+		<input type="text" class="form-control" placeholder="Author" 
+		id="email" required
+		data-validation-required-message="Please enter the author" />
+		</div>
+		</div> 			 
+		<button type="submit" class="btn btn-primary pull-right">Submit</button><br />
+		<div id="success"> </div>
 		<!-- footer start --> 
 		<footer id="footer">
 
@@ -856,6 +884,7 @@
 						
 						<div class="col-sm-6">
 							<div class="footer-content">
+								
 								<!--NOTE: Update your email Id in "contact_me.php" file in order to receive emails from your contact form-->
 		<form name="sentMessage" id="contactForm"  novalidate> 
 		<div class="control-group">
