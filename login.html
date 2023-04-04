@@ -5,13 +5,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>auth0.createAuth0Client({
+      domain: "dev-y6uxr11q7smc2u0q.us.auth0.com",
+      clientId: "7lHMw84Rvdg7s2AtbNx3eznuqSteyB2g",
+      authorizationParams: {
+        redirect_uri: window.location.origin
+      }
+    }).then(async (auth0Client) => {
+      // Assumes a button with id "login" in the DOM
+      const loginButton = document.getElementById("login");
+    
+      loginButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        auth0Client.loginWithRedirect();
+      });
+    
+      if (location.search.includes("state=") && 
+          (location.search.includes("code=") || 
+          location.search.includes("error="))) {
+        await auth0Client.handleRedirectCallback();
+        window.history.replaceState({}, document.title, "/");
+      }
+    
+      // Assumes a button with id "logout" in the DOM
+      const logoutButton = document.getElementById("logout");
+    
+      logoutButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        auth0Client.logout();
+      });
+    
+      const isAuthenticated = await auth0Client.isAuthenticated();
+      const userProfile = await auth0Client.getUser();
+    
+      // Assumes an element with id "profile" in the DOM
+      const profileElement = document.getElementById("profile");
+    
+      if (isAuthenticated) {
+        profileElement.style.display = "block";
+        profileElement.innerHTML = `
+                <p>${userProfile.name}</p>
+                <img src="${userProfile.picture}" />
+              `;
+      } else {
+        profileElement.style.display = "none";
+      }
+    });</script>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
 </head>
 <body>
+  <style>
+    body,html {
+      height: 100%;
+      background-color: #dadfe8;
+    }
+  
+    .login-container {
+      position: relative;
+      height: 100%;
+    }
+  
+    .login-box {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 15px;
+      background-color: #fff;
+      box-shadow: 0px 5px 5px #ccc;
+      border-radius: 5px;
+      border-top: 1px solid #e9e9e9;
+    }
+  
+    .login-header {
+      text-align: center;
+    }
+  
+    .login-header img {
+      width: 75px;
+    }
+  
+    #error-message {
+      display: none;
+      white-space: break-spaces;
+    }
+  </style>
     <form action="action_page.php" method="post">
         <div class="imgcontainer">
           <img src="images/favicon_io/favicon-32x32.png" alt="Avatar" class="avatar">
         </div>
-    
+        
       <div class="g-signin2" data-onsuccess="onSignIn"></div>
       <meta name="google-signin-client_id" content="225807565059-7lv3674g72gq8jp1av3cq284t5sd1gv6.apps.googleusercontent.com">
       <a href="signup.html"> Create an Account</a>
