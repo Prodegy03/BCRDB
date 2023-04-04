@@ -5,53 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>auth0.createAuth0Client({
-      domain: "dev-y6uxr11q7smc2u0q.us.auth0.com",
-      clientId: "7lHMw84Rvdg7s2AtbNx3eznuqSteyB2g",
-      authorizationParams: {
-        redirect_uri: window.location.origin
-      }
-    }).then(async (auth0Client) => {
-      // Assumes a button with id "login" in the DOM
-      const loginButton = document.getElementById("login");
-    
-      loginButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        auth0Client.loginWithRedirect();
-      });
-    
-      if (location.search.includes("state=") && 
-          (location.search.includes("code=") || 
-          location.search.includes("error="))) {
-        await auth0Client.handleRedirectCallback();
-        window.history.replaceState({}, document.title, "/");
-      }
-    
-      // Assumes a button with id "logout" in the DOM
-      const logoutButton = document.getElementById("logout");
-    
-      logoutButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        auth0Client.logout();
-      });
-    
-      const isAuthenticated = await auth0Client.isAuthenticated();
-      const userProfile = await auth0Client.getUser();
-    
-      // Assumes an element with id "profile" in the DOM
-      const profileElement = document.getElementById("profile");
-    
-      if (isAuthenticated) {
-        profileElement.style.display = "block";
-        profileElement.innerHTML = `
-                <p>${userProfile.name}</p>
-                <img src="${userProfile.picture}" />
-              `;
-      } else {
-        profileElement.style.display = "none";
-      }
-    });</script>
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
 </head>
 <body>
   <style>
@@ -95,7 +48,7 @@
         </div>
         
       <div class="g-signin2" data-onsuccess="onSignIn"></div>
-      <meta name="google-signin-client_id" content="225807565059-7lv3674g72gq8jp1av3cq284t5sd1gv6.apps.googleusercontent.com">
+      <meta name="google-signin-client_id" content="225807565059-7lv3674g72gq8jp1av3cq284t5sd1gv6.apps.googleusercontent.com"> <a href="index,html">Back</a>
       <a href="signup.html"> Create an Account</a>
       <a href="index.html"> Cancel</a>
       <script src="https://apis.google.com/js/platform.js" async defer></script>
