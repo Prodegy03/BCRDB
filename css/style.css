@@ -893,3 +893,6 @@ border-radius: 50%;
 #donate-button{
 	margin: auto;
 }
+.checked {
+	color: orange;
+  }
